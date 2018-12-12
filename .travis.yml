@@ -6,4 +6,17 @@ before_install:
   - docker build -t applayer/checkout-react-app -f Dockerfile.dev .
 
 script:
-  - docker run applayer/checkout-react-app npm run test -- --coverage  
+  - docker run applayer/checkout-react-app npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "checkoutreactapp"
+  env: "CheckoutReactApp-env"
+  bucket_name: "elasticbeanstalk-us-east-1-538830916293"
+  bucket_path: "checkoutreactapp"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
