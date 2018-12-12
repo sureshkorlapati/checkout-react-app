@@ -11,10 +11,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "checkoutreactapp"
+  app: "checkout-react-app"
   env: "CheckoutReactApp-env"
   bucket_name: "elasticbeanstalk-us-east-1-538830916293"
-  bucket_path: "checkoutreactapp"
+  bucket_path: "checkout-react-app"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
