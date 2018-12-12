@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t applayer/checkout-react-app -f Dockerfile.dev .
+
+script:
+  - docker run applayer/checkout-react-app npm run test -- --coverage  
