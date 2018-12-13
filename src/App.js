@@ -9,7 +9,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Checkout App - shop at your local stores.
+            Checkout App - best way to shop at your local stores.
           </p>
           
         </header>
